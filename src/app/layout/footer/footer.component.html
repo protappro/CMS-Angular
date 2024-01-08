@@ -1,0 +1,98 @@
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <div class="container">
+        <div class="row justify-content-center m-none">
+          <div class="col-md-3 col-sm-6 col-6">
+            <h5 class="footer-heading">Quick link</h5>
+            <ul class="list-group">
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a [routerLink]="['/about-us']" routerLinkActive="active">About Us</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a [routerLink]="['/services']" routerLinkActive="active">Service</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="/register">Signup</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-6">
+            <h5 class="footer-heading">Policies</h5>
+            <ul class="list-group">
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a  [routerLink]="['/terms']" routerLinkActive="active">Terms & Conditions</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a  [routerLink]="['/policy']" routerLinkActive="active">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-12">
+            <h5 class="footer-heading">Contact Us</h5>
+            <div class="get-touch-list">
+              <div class="media">
+                <div class="d-flex align-self-start mr-3">
+                  <i class="demo-icon fa fa-envelope-o"></i>
+                </div>
+                <div class="media-body">
+                  <p><a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+              </div>
+            </div>           
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-12">
+            <h5 class="footer-heading">Subscribe Now</h5>
+            <div class="getin-touch-from">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      placeholder="Enter Your Email Id"
+                    />
+                    <button type="button" class="send-btn">
+                      <i class="demo-icon fa fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <ul class="footer-social">
+              <li>
+                <a href="#" target="_blank"
+                  ><i class="demo-icon fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"
+                  ><i class="demo-icon fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"
+                  ><i class="demo-icon fa fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"
+                  ><i class="demo-icon fa fa-youtube-play"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right-end">
+        
+      <i class="fab fa-angular"></i> {{angular_version}}
+        <p><i class="fal fa-copyright"></i> Copyright {{current_year}} <a href="#" target="_blank">Content Management Service</a>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
