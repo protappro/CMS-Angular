@@ -1,20 +1,10 @@
-<div class="d-flex flex-column flex-root">
-    <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
-        <div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10"
-            style="background-image: url('/assets/img/banner/_slide1.jpg'); background-repeat: no-repeat; background-size: cover; max-width:600px">
-            <div class="d-flex flex-row-fluid flex-column justify-content-between">
-                <a [routerLink]="['/']" class="flex-column-auto mt-5 pb-lg-0 pb-10">
-                    <img src="/assets/img/banner/_slide1.jpg" class="max-h-70px" alt="" />
-                </a>
-                <div class="d-none flex-column-auto d-lg-flex justify-content-between mt-10">
-                    <div class="opacity-70 font-weight-bold text-white">© 2023 OworkO</div>
-                </div>
-            </div>
-        </div>
-        <div class="h-100 d-flex justify-content-center align-items-center"
-            style="flex: 1 auto; -ms-flex: 1 0 0px;  min-width: 0;margin-top: 7.5rem !important; ">
-            <div class="position-absolute top-0 right-0 text-right mt-lg-5 mb-15 mb-lg-0 flex-column-auto justify-content-center py-5 px-10"
-                style="
+<div class="content">
+    <div class="d-flex half" style="height: 100vh;">
+        <div class="bg" style="background-image: url('/assets/img/banner/_slide1.jpg');"></div>
+        <div class="contents">
+            <div class="h-100 d-flex justify-content-center align-items-center">
+                <div class="position-absolute top-0 right-0 text-right mt-lg-5 mb-15 mb-lg-0 flex-column-auto justify-content-center py-5 px-10"
+                    style="
                 position: absolute !important;
                 padding-top: 1.25rem !important;
                 padding-bottom: 1.25rem !important;
@@ -25,96 +15,103 @@
                 text-align: right !important;
                 flex: none;
                 right: 0 !important; top: 0 !important; ">
-                <span class="font-weight-bold text-dark-50">Already have an account?</span>
-                <a [routerLink]="['/login']" class="font-weight-bold ml-2"> Sign In!</a>
-            </div>
-
-            <!--begin::Signin-->
-            <div class="login-form login-signin">
-                <div class="text-center mb-3 pb-3">
-                    <h3 class="font-size-h1">Sign Up</h3>
-                    <p class="text-muted font-weight-bold">Enter your details to create your account</p>
+                    <span class="font-weight-bold text-dark-50">Already have an account?</span>
+                    <a [routerLink]="['/login']" class="font-weight-bold ml-2"> Sign In!</a>
                 </div>
-                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="registerForm">
-                    <div class="row mb-2">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input formControlName="first_name" class="form-control " type="text"
-                                    placeholder="First Name"
-                                    [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" autocomplete="name"
-                                    autofocus />
-                                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback"
-                                style="display: block;">
-                                    <div *ngIf="f.first_name.errors.required" class="fv-help-block">First name is
-                                        required</div>
+
+                <!--begin::Signin-->
+                <div class="login-form login-signin">
+                    <div class="text-center mb-3 pb-3">
+                        <h3 class="font-size-h1">Sign Up</h3>
+                        <p class="text-muted font-weight-bold">Enter your details to create your account</p>
+                    </div>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="registerForm">
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input formControlName="first_name" class="form-control " type="text"
+                                        placeholder="First Name"
+                                        [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
+                                        autocomplete="name" autofocus />
+                                    <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback"
+                                        style="display: block;">
+                                        <div *ngIf="f.first_name.errors.required" class="fv-help-block">First name is
+                                            required</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input formControlName="last_name" class="form-control " type="last_name"
-                                    placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"
-                                    autocomplete="last_name" autofocus />
-                                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback"
-                                style="display: block;">
-                                    <div *ngIf="f.last_name.errors.required" class="fv-help-block">Last name is required
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input formControlName="last_name" class="form-control " type="last_name"
+                                        placeholder="Last Name"
+                                        [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"
+                                        autocomplete="last_name" autofocus />
+                                    <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback"
+                                        style="display: block;">
+                                        <div *ngIf="f.last_name.errors.required" class="fv-help-block">Last name is
+                                            required
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group mb-2">
-                        <input formControlName="email" class="form-control " type="email" placeholder="Email"
-                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autocomplete="email" />
-                        <div *ngIf="submitted && f.email.errors"  class="invalid-feedback"
-                        style="display: block;">
-                            <div *ngIf="f.email.errors.required" class="fv-help-block">Email is required</div>
+                        <div class="form-group mb-2">
+                            <input formControlName="email" class="form-control " type="email" placeholder="Email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autocomplete="email" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback" style="display: block;">
+                                <div *ngIf="f.email.errors.required" class="fv-help-block">Email is required</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group mb-2">
-                        <input formControlName="phone" class="form-control " type="text" placeholder="Phone"
-                            [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" autocomplete="phone" />
-                        <div *ngIf="submitted && f.phone.errors"  class="invalid-feedback"
-                        style="display: block;">
-                            <div *ngIf="f.phone.errors.required" class="fv-help-block">Phone is required</div>
-                            <div *ngIf="f.phone.errors.minLength" class="fv-help-block">Phone number must be 10 digit</div>
+                        <div class="form-group mb-2">
+                            <input formControlName="phone" class="form-control " type="text" placeholder="Phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" autocomplete="phone" />
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback" style="display: block;">
+                                <div *ngIf="f.phone.errors.required" class="fv-help-block">Phone is required</div>
+                                <div *ngIf="f.phone.errors.minLength" class="fv-help-block">Phone number must be 10
+                                    digit</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-6">
-                            <div class="form-group mb-4">
-                                <input formControlName="password" class="form-control " type="password"
-                                    placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-                                    autocomplete="current-password" />
-                                <div *ngIf="submitted && f.password.errors"  class="invalid-feedback"
-                                style="display: block;">
-                                    <div *ngIf="f.password.errors.required" class="fv-help-block">Password is required</div>
-                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="form-group mb-4">
+                                    <input formControlName="password" class="form-control " type="password"
+                                        placeholder="Password"
+                                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                        autocomplete="current-password" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback"
+                                        style="display: block;">
+                                        <div *ngIf="f.password.errors.required" class="fv-help-block">Password is
+                                            required</div>
+                                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group mb-4">
+                                    <input formControlName="confirm_password" class="form-control " type="password"
+                                        placeholder="Confirm Password"
+                                        [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }"
+                                        autocomplete="current-password" />
+                                    <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback"
+                                        style="display: block;">
+                                        <div *ngIf="f.confirm_password.errors.mustMatch">Passwords must match</div>
+                                        <div *ngIf="f.confirm_password.errors.minlength">Confirm Password must be at
+                                            least 6 characters</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="form-group mb-4">
-                                <input formControlName="confirm_password" class="form-control " type="password"
-                                    placeholder="Confirm Password"
-                                    [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }"
-                                    autocomplete="current-password" />
-                                <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback"
-                                    style="display: block;">
-                                    <div *ngIf="f.confirm_password.errors.mustMatch">Passwords must match</div>
-                                    <div *ngIf="f.confirm_password.errors.minlength">Confirm Password must be at least 6 characters</div>  
-                                </div>
-                            </div>
+                        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
+                        <div
+                            class="form-group d-flex flex-wrap flex-center justify-content-center align-items-center mt-3">
+                            <button type="submit" id="kt_login_signin_submit" action="user_signin"
+                                class="btn btn-primary mx-3">Register</button>
+                            <a [routerLink]="['/']" type="button" id="kt_login_signup_cancel"
+                                class="btn btn-danger mx-3">Cancel</a>
                         </div>
-                    </div>
-                    <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"></ngx-recaptcha2>
-                    <div class="form-group d-flex flex-wrap flex-center justify-content-center align-items-center mt-3">
-                        <button type="submit" id="kt_login_signin_submit" action="user_signin"
-                            class="btn btn-primary mx-3">Register</button>
-                        <a [routerLink]="['/']" type="button" id="kt_login_signup_cancel"
-                            class="btn btn-danger mx-3">Cancel</a>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

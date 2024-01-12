@@ -535,11 +535,30 @@ a, a:hover, a:focus {
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
 }
-
+.effect-red {
+  color: #fff;
+  border: 3px solid #e71d1d;
+  background-image: -webkit-linear-gradient(30deg,
+      #e71d1d 50%,
+      transparent 50%);
+  background-image: linear-gradient(30deg, #e71d1d 50%, transparent 50%);
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
 .effect-1:hover,
 .effect-1:focus {
   background-position: 100%;
   color: #52b8f3;
+  font-weight: 500;
+}
+
+.effect-red:hover,
+.effect-red:focus {
+  background-position: 100%;
+  color: #e71d1d;
   font-weight: 500;
 }
 
@@ -1242,4 +1261,35 @@ a, a:hover, a:focus {
 
 #toast-container>div {
   opacity: 1;
+}
+
+.half .contents, .half .bg {
+  width: 50%;
+}
+.bg {
+  background-size: cover;
+  background-position: center;
+}
+.login-form{
+  max-width: 60%;
+  width: 50%;
+}
+.social-login a {
+  display: block;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.social-login a.facebook {
+  background: #3b5998;
+}
+.social-login a.twitter {
+  background: #1da1f2;
+}
+.social-login a.google {
+  background: #ea4335;
 }

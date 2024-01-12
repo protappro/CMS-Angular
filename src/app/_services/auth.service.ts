@@ -20,5 +20,20 @@ export class AuthService {
   login(data: any) {
     return this.httpClient.post<any>(environment.baseApiUrl + '/login', data);
   }
+  logout() {
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('user_info');
+    localStorage.clear();
+    return true;
+  }
+
+  isAuthenticated(): boolean{
+    if (localStorage.getItem('user_info')){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
 }
